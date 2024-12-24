@@ -23,9 +23,6 @@ for year in years:
         url = "https://baseball-freak.com/audience/hawks.html"
     else:
         url = f"https://baseball-freak.com/audience/{year}/hawks.html"
-
-    print(f"Processing: {url}")
-
     # ページを取得
     response = requests.get(url, headers=headers)
 
@@ -77,12 +74,7 @@ for year in years:
 
 # DataFrameに変換
 df = pd.DataFrame(data)
-
-display(df)
-
 # CSVに保存
 df.to_csv("softbank_audience_full_data.csv", index=False, encoding='utf-8-sig')
-print("データをCSVに保存しました: softbank_audience_full_data.csv")
-
 
 
