@@ -29,11 +29,11 @@ def process_weather_data(file_path):
     # 列名をリネーム
     weather.columns = [
         "yyyy/mm/dd",
-        "Average_Temperature (℃)",
         "Total_Precipitation (mm)",
+        "Average_Temperature (℃)",
         "Average_wind_speed(m/s)"
     ]
-    
+
     # Date列をdatetime型に変換
     weather["yyyy/mm/dd"] = pd.to_datetime(weather["yyyy/mm/dd"])
 

@@ -1,4 +1,4 @@
-Year,Date,Audience,Result,Pitcher,GameTime,Total_Precipitation (mm),Average_Temperature (℃),Average_wind_speed(m/s),Home_Score,Away_Score,Weekday_Friday,Weekday_Monday,Weekday_Saturday,Weekday_Sunday,Weekday_Thursday,Weekday_Tuesday,Weekday_Wednesday,Opponent_DeNA,Opponent_オリックス,Opponent_ヤクルト,Opponent_ロッテ,Opponent_中日,Opponent_巨人,Opponent_広島,Opponent_日本ハム,Opponent_楽天,Opponent_西武,Opponent_阪神
+﻿Year,Date,Audience,Result,Pitcher,GameTime,Average_Temperature (℃),Total_Precipitation (mm),Average_wind_speed(m/s),Home_Score,Away_Score,Weekday_Friday,Weekday_Monday,Weekday_Saturday,Weekday_Sunday,Weekday_Thursday,Weekday_Tuesday,Weekday_Wednesday,Opponent_DeNA,Opponent_オリックス,Opponent_ヤクルト,Opponent_ロッテ,Opponent_中日,Opponent_巨人,Opponent_広島,Opponent_日本ハム,Opponent_楽天,Opponent_西武,Opponent_阪神
 2015,2015-03-27,38500,0,攝津,197,12.2,0.0,1.7,1,3,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
 2015,2015-03-28,37397,1,スタンリッジ,157,16.1,0.0,2.2,4,2,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
 2015,2015-03-29,38118,0,中田,201,16.1,0.0,2.5,4,5,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
