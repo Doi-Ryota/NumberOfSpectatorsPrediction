@@ -17,6 +17,12 @@ def feature_engineering(df):
     
     # 雨量0のフラグ
     df['Rain_Zero_Flag'] = df['Total_Precipitation (mm)'].apply(lambda x: 1 if x == 0 else 0)
+
+    # ドームの定員
+    df['Capacity'] = df['Year'].apply(lambda x: 38530 if x < 2019 else 40178)
+
+    # 占有率
+    df["Occupancy"] = df["Audience"] / df['Capacity']
     
     return df
 df_featured = feature_engineering(df)
