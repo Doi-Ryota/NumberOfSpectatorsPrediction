@@ -29,8 +29,8 @@ def process_weather_data(file_path):
     # 列名をリネーム
     weather.columns = [
         "yyyy/mm/dd",
-        "Total_Precipitation (mm)",
         "Average_Temperature (℃)",
+        "Total_Precipitation (mm)",
         "Average_wind_speed(m/s)"
     ]
 
