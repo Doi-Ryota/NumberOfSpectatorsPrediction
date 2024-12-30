@@ -6,3 +6,4 @@ jpholiday
 seaborn
 matplotlib
 japanize-matplotlib
+sklearn
