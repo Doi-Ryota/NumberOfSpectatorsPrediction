@@ -46,3 +46,6 @@ results_df = pd.DataFrame({
 
 # 結果をCSVファイルとして保存
 results_df.to_csv('../results/predictions/decision_tree_predictions.csv', index=False)
+
+# テストデータ（特徴量）も保存
+X_test.to_csv('../results/predictions/decision_tree_X_test.csv', index=False)
