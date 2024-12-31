@@ -37,6 +37,18 @@ def feature_engineering(df):
 
     # 占有率
     df["Occupancy"] = df["Audience"] / df['Capacity']
+
+    # 対戦チームをエンコード
+    n = df["Weekday"].nunique()
+    df = pd.get_dummies(df, columns=['Weekday'], drop_first=False)
+    # 最後のn列をint型に変換
+    df.iloc[:, -n:] = df.iloc[:, -n:].astype(int)
+
+    # 曜日をエンコード
+    n = df["Opponent"].nunique()
+    df = pd.get_dummies(df, columns=['Opponent'], drop_first=False)
+    # 最後のn列をint型に変換
+    df.iloc[:, -n:] = df.iloc[:, -n:].astype(int) 
     
     return df
 df_featured = feature_engineering(df)

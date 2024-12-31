@@ -88,18 +88,6 @@ def preprocess_data(df):
     df['Average_Temperature (℃)'] = pd.to_numeric(df['Average_Temperature (℃)'])
     df[ "Average_wind_speed(m/s)"] = pd.to_numeric(df[ "Average_wind_speed(m/s)"])
 
-    # 対戦チームをエンコード
-    n = df["Weekday"].nunique()
-    df = pd.get_dummies(df, columns=['Weekday'], drop_first=False)
-    # 最後のn列をint型に変換
-    df.iloc[:, -n:] = df.iloc[:, -n:].astype(int)
-
-    # 曜日をエンコード
-    n = df["Opponent"].nunique()
-    df = pd.get_dummies(df, columns=['Opponent'], drop_first=False)
-    # 最後のn列をint型に変換
-    df.iloc[:, -n:] = df.iloc[:, -n:].astype(int) 
-
     # ゲーム時間の分に変換
     df['GameTime'] = df['GameTime'].apply(lambda x: int(x.split(':')[0]) * 60 + int(x.split(':')[1]))
 
