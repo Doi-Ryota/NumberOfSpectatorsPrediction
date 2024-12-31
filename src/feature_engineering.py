@@ -19,7 +19,21 @@ def feature_engineering(df):
     df['Rain_Zero_Flag'] = df['Total_Precipitation (mm)'].apply(lambda x: 1 if x == 0 else 0)
 
     # ドームの定員
-    df['Capacity'] = df['Year'].apply(lambda x: 38530 if x < 2019 else 40178)
+        # ドームの定員
+    data = [
+        40142, 40062, 40000, 40000, 40122, 40178, 
+        38530, 38585, 38585, 38585
+    ]
+    
+    # 年度のリストを作成 (2024年から2015年まで)
+    years = list(range(2024, 2014, -1))
+    
+    # DataFrameを作成
+    capa = pd.DataFrame({
+        'Year': years,
+        'Capacity': data
+    })
+    df = pd.merge(df, capa, on='Year', how='left')
 
     # 占有率
     df["Occupancy"] = df["Audience"] / df['Capacity']

@@ -21,9 +21,9 @@ X_columns = ['Average_Temperature (℃)', 'Total_Precipitation (mm)',
        'Match_Number', 'Rain_Zero_Flag']
 
 X_train = train_df[X_columns]
-y_train = train_df['occupancy']
+y_train = train_df['Occupancy']
 X_test = test_df[X_columns]
-y_test = test_df['occupancy']
+y_test = test_df['Occupancy']
 
 # 決定木回帰モデルの作成
 model = DecisionTreeRegressor(random_state=42)
