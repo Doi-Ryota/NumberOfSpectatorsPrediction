@@ -8,3 +8,4 @@ matplotlib
 japanize-matplotlib
 sklearn
 joblib
+shap
