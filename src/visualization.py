@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import joblib
 import japanize_matplotlib
 import shap
+from sklearn.tree import plot_tree
 
 results = pd.read_csv("../results/predictions/decision_tree_predictions.csv")
 X_test = pd.read_csv("../results/predictions/decision_tree_X_test.csv")
@@ -188,5 +189,16 @@ optimal_stock, max_profit, results = analyze_inventory_optimization(
     purchase_rate=purchase_rate,
     cost_per_unit=cost_per_unit
 )
-
 plt.savefig("../results/plots/max_profit.png")
+
+# 決定木の可視化
+plt.figure(figsize=(30, 10))  # グラフのサイズを調整
+plot_tree(model, 
+          filled=True,  # ノードを色で塗りつぶす
+          max_depth=4,  # 最初の5階層のみ表示
+          feature_names=X_test.columns,  # 特徴量の名前を表示
+          rounded=True,  # ノードを丸みを帯びた形に
+          fontsize=12)  # フォントサイズを調整
+
+# グラフを表示
+plt.savefig("../results/plots/tree_visualization.png")
