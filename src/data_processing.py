@@ -72,14 +72,6 @@ def preprocess_data(df):
     df['Date'] = pd.to_datetime(df['FormattedDate'])
     df['Weekday'] = pd.to_datetime(df['FormattedDate']).dt.day_name()
 
-    # 結果の数値化
-    df['Result'] = df['Result'].apply(lambda x: 0 if x == '●' else 1)
-
-    # スコアの分割
-    df[['Home_Score', 'Away_Score']] = df['Score'].str.split(' - ', expand=True)
-    df['Home_Score'] = pd.to_numeric(df['Home_Score'])
-    df['Away_Score'] = pd.to_numeric(df['Away_Score'])
-
     # 観客数の数値化
     df['Audience'] = pd.to_numeric(df['Audience'])
 
@@ -88,11 +80,11 @@ def preprocess_data(df):
     df['Average_Temperature (℃)'] = pd.to_numeric(df['Average_Temperature (℃)'])
     df[ "Average_wind_speed(m/s)"] = pd.to_numeric(df[ "Average_wind_speed(m/s)"])
 
-    # ゲーム時間の分に変換
-    df['GameTime'] = df['GameTime'].apply(lambda x: int(x.split(':')[0]) * 60 + int(x.split(':')[1]))
+    # コロナ時期をfilter
+    df = df[~(df["Year"].isin([2020,2021,2022]))].reset_index(drop=True)
 
     # 不要な列の削除
-    df.drop(columns=['FormattedDate', 'Score','yyyy/mm/dd', "Venue"], inplace=True)
+    df.drop(columns=['FormattedDate', 'Score','yyyy/mm/dd', "Venue",'Result','Pitcher','GameTime'], inplace=True)
 
     return df
 
