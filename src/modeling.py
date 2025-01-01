@@ -5,9 +5,6 @@ import joblib
 
 df = pd.read_csv(r"../data/df_featured.csv")
 
-# コロナ時期をfilter
-df = df[~(df["Year"].isin([2020,2021,2022]))].reset_index(drop=True)
-
 train_df = df[df['Year'] != 2024]  # 2024年以外をトレーニングデータに
 test_df = df[df['Year'] == 2024]   # 2024年をテストデータに
 

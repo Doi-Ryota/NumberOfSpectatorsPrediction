@@ -1,5 +1,7 @@
 import pandas as pd
 import jpholiday
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 df = pd.read_csv(r"..\data\df_preprocessed.csv")
 def feature_engineering(df):
     # Date列をdatetime型に変換
@@ -49,7 +51,7 @@ def feature_engineering(df):
     df = pd.get_dummies(df, columns=['Opponent'], drop_first=False)
     # 最後のn列をint型に変換
     df.iloc[:, -n:] = df.iloc[:, -n:].astype(int) 
-    
+    df.drop(["Audience",'Capacity'],axis=1,inplace=True)
     return df
 df_featured = feature_engineering(df)
 df_featured.to_csv(r"..\data\df_featured.csv",index=False)
