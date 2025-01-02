@@ -5,6 +5,6 @@ jpholiday
 seaborn
 matplotlib
 japanize-matplotlib
-sklearn
+scikit-learn
 joblib
 shap
