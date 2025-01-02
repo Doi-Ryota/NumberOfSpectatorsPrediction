@@ -1,7 +1,6 @@
 requests
 bs4
 pandas
-time
 jpholiday
 seaborn
 matplotlib
@@ -9,4 +8,3 @@ japanize-matplotlib
 sklearn
 joblib
 shap
-warnings
